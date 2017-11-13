@@ -43,8 +43,10 @@ desconectar();
         <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css" >
 	    <link rel="stylesheet" type="text/css" href="alertify/css/themes/default.css" >
         
+        <script src="assets/js/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/gestionar.js"></script>
         <script src="alertify/alertify.min.js"></script>
-        <script src="js/gestionar.js"></script>
+        <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     </head>
 
 
@@ -79,9 +81,9 @@ desconectar();
 
                             <!-- Top nav left menu -->
                             <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
+                                <li><a href="ayuda.php">Ayuda</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
                             </ul>
 
                             <!-- Top nav Right menu -->
@@ -93,116 +95,9 @@ desconectar();
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
-                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                        <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                                <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
-                                        </li>
-                                        <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
-                                        <!--</li>-->
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -227,7 +122,7 @@ desconectar();
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="img/user.png" alt="" class="thumb-md img-circle">
+                                    <img src="<?php echo $usuario[4]?>" alt="" class="thumb-md img-circle">
                                 </div>
                                 <div class="user-info">
                                     <a><?php echo $usuario[1]?></a>
@@ -286,8 +181,7 @@ desconectar();
                                                         </tr>
                                                     </thead>
                                                     <?php foreach($empleado as $emp):
-									                       $datos=
-                                                           $emp[0]."||".
+									                       $datos= $emp[0]."||".
 										                   $emp[1]."||".
 									                       $emp[2]."||".
 										                   $emp[3]."||".
@@ -309,9 +203,9 @@ desconectar();
                                                         <td><?php echo $emp[8]?></td>
                                                         <td><?php echo $emp[9]?></td>
                                                         <td><?php echo $emp[10]?></td>
-                        <td><a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#modificar" onclick="agregaformEmpleado('<?php echo $datos ?>')">
-				        <span class="fa fa-wrench" aria-hidden="true"></span></a> 
-				        <a class="btn btn-icon btn-danger" onclick="preguntarSiNoEmpleado('<?php echo $emp[0] ?>')"><span class="fa fa-remove" aria-hidden="true"></span></a></td>
+                        <td><a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#modificar" onclick="agrega('<?php echo $datos ?>')">
+				        <span class="fa fa-wrench" aria-hidden="true"></span> </a> 
+				         <a class="btn btn-icon btn-danger" onclick="preguntarSiNoEmpleado('<?php echo $emp[0] ?>')"><span class="fa fa-remove" aria-hidden="true"></span></a></td>
                                                     </tr>
                                                     <?php endforeach ?> 
                                                     </tbody>
@@ -327,9 +221,6 @@ desconectar();
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>
@@ -425,12 +316,12 @@ desconectar();
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Nombre(s)</label>
-                                <input type="text" hidden="" id="idEmpleado" name=""/>
-                                <input type="text" class="form-control" placeholder="Nombre(s)" name="nombreU">
+                                <input type="text" hidden="" id="idEmpleado" name="">
+                                <input type="text" class="form-control" placeholder="Nombre(s)" id="nombreU">
                             </div>
                             <div class="form-group">
                                 <label>Apellido Paterno</label>
-                                <input type="text" class="form-control" placeholder="Apellido Paterno" name="apePatU">
+                                <input type="text" class="form-control" placeholder="Apellido Paterno" id="apePatU">
                             </div>
                             <div class="form-group">
                                 <label>Apellido Materno</label>
@@ -438,31 +329,31 @@ desconectar();
                             </div>
                             <div class="form-group">
                                 <label>Calle</label>
-                                <input type="text" class="form-control" placeholder="Calle" name="calleU">
+                                <input type="text" class="form-control" placeholder="Calle" id="calleU">
                             </div>
                             <div class="form-group">
                                 <label>Colonia</label>
-                                <input type="text" class="form-control" placeholder="Colonia" name="coloniaU">
+                                <input type="text" class="form-control" placeholder="Colonia" id="coloniaU">
                             </div>
                             <div class="form-group">
                                 <label>Código postal</label>
-                                <input type="text" class="form-control" placeholder="Cod. Postal" name="codPostalU">
+                                <input type="text" class="form-control" placeholder="Cod. Postal" id="codPostalU">
                             </div>
 						    <div class="form-group">
                                 <label>Número</label>
-                                <input type="text" class="form-control" placeholder="Número" name="numeroU">
+                                <input type="text" class="form-control" placeholder="Número" id="numeroU">
                             </div>
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input type="text" class="form-control" placeholder="Teléfono" name="telefonoU">
+                                <input type="text" class="form-control" placeholder="Teléfono" id="telefonoU">
                             </div>
                             <div class="form-group">
                                 <label>Sueldo</label>
-                                <input type="text" class="form-control" placeholder="Sueldo" name="sueldoU">
+                                <input type="text" class="form-control" placeholder="Sueldo" id="sueldoU">
                             </div>
                             <div class="form-group">
                                 <label>Área</label>
-                                <select name="areaU" class="form-control">
+                                <select id="areaU" class="form-control">
 								    <option>TORTILLERIA</option>
 								    <option>PISO</option>
 								    <option>CAJA</option>
@@ -486,15 +377,9 @@ desconectar();
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!--Morris Chart-->
-		<script src="assets/plugins/morris/morris.min.js"></script>
-		<script src="assets/plugins/raphael/raphael-min.js"></script>
-
-        <!-- Dashboard init -->
-		<script src="assets/pages/jquery.dashboard.js"></script>
-
         <!-- App Js -->
         <script src="assets/js/jquery.app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </body>
 </html>
 

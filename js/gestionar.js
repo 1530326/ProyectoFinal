@@ -1,4 +1,4 @@
-function agrega(datos){
+function agregaformEmpleado(datos){
 	d = datos.split('||');
     $('#idEmpleado').val(d[0]);
 	$('#nombreU').val(d[1]);

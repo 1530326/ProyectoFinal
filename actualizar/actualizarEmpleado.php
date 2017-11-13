@@ -1,5 +1,5 @@
 <?php
-	require 'funciones.php';
+	require '../funciones.php';
 	conectar();
 	$idEmpleado=$_POST['idEmpleado'];
 	$apePat=strtoupper($_POST['apePatU']);

@@ -6,7 +6,8 @@ if(!sesionIniciada()){
 
 conectar();
 $usuario = getUsuario();
-
+$venta = getVenta();
+$producto = getProducto();
 desconectar();
 ?>
 
@@ -43,8 +44,16 @@ desconectar();
         <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css" >
 	    <link rel="stylesheet" type="text/css" href="alertify/css/themes/default.css" >
         
+        <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+		<link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+		<link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+		<link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        
+        <script src="assets/js/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/gestionar.js"></script>
         <script src="alertify/alertify.min.js"></script>
-
+        <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     </head>
 
 
@@ -79,9 +88,9 @@ desconectar();
 
                             <!-- Top nav left menu -->
                             <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
+                                <li><a href="ayuda.php">Ayuda</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
                             </ul>
 
                             <!-- Top nav Right menu -->
@@ -92,117 +101,11 @@ desconectar();
                                          <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
+                                
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
-                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                        <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                                <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
-                                        </li>
-                                        <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
-                                        <!--</li>-->
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -227,7 +130,7 @@ desconectar();
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="img/user.png" alt="" class="thumb-md img-circle">
+                                    <img src="<?php echo $usuario[4]?>" alt="" class="thumb-md img-circle">
                                 </div>
                                 <div class="user-info">
                                     <a><?php echo $usuario[1]?></a>
@@ -255,7 +158,7 @@ desconectar();
                 </aside>
                 <!--left navigation end-->
 
-                                <!-- START PAGE CONTENT -->
+                <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
                     <div class="container">
                         <div class="row">
@@ -265,7 +168,7 @@ desconectar();
                                         <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Ventas</h2>
                                     </div>
                                     <div align="right">
-                                        <button type="button" class="btn btn-custom btn-rounded">Agregar nuevo</button>
+                                        <a class= "btn btn-custom btn-rounded" type="button" data-toggle="modal" data-target="#agregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar nuevo</a>
                                     </div>
                                     <br>
                                     <div class="col-md-16">
@@ -275,24 +178,36 @@ desconectar();
                                                     <thead>
                                                         <tr>
                                                             <th>ID</th>
-                                                            <th>Nombre</th>
-                                                            <th>Apellido Paterno</th>
-                                                            <th>Apellido Materno</th>
-                                                            <th>Teléfono</th>
+                                                            <th>Producto</th>
+                                                            <th>Cantidad</th>
+                                                            <th>Fecha</th>
+                                                            <th>Hora</th>
+                                                            <th>Total</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
+                                                    <?php foreach($venta as $vent):
+									                       $datos= $vent[0]."||".
+										                   $vent[1]."||".
+									                       $vent[2]."||".
+										                   $vent[3]."||".
+										                   $vent[4]."||".
+									                       $vent[5];
+								                    ?>
                                                     <tbody>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Angela</td>
-                                                        <td>Carrizales</td>
-                                                        <td>Perez</td>
-                                                        <td>8341234567</td>
-                                                        <td><a class="btn btn-primary" type="button" data-toggle="modal" data-target="#modificar" onclick="">
-									                   <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Modificar</a> 
-									                   <a class="btn btn-danger" onclick=""><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar</a></td>
+                                                        <td><?php echo $vent[0]?></td>
+                                                        <td><?php echo $vent[1]?></td>
+                                                        <td><?php echo $vent[2]?></td>
+                                                        <td><?php echo $vent[3]?></td>
+                                                        <td><?php echo $vent[4]?></td>
+                                                        <td><?php echo $vent[5]?></td>
+                        <td>
+                        <a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#ver" onclick="agregaVenta('<?php echo $datos ?>')">
+				        <span class="fa fa-search" aria-hidden="true"></span></a> 
+                        </td>
                                                     </tr>
+                                                    <?php endforeach ?> 
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -306,9 +221,6 @@ desconectar();
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>
@@ -321,6 +233,102 @@ desconectar();
             <!-- end .page-contentbar -->
         </div>
         <!-- End #page-wrapper -->
+        
+        <!-- Agregar venta-->
+        <div class="modal fade" id="agregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Agregar venta</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Producto</label>
+                                <select name="producto" class="form-control">
+                                    <?php foreach($producto as $pro):
+								        $d= $pro[1];
+								    ?>
+                                    <option><?php echo $pro[1]?></option>
+                                    <?php endforeach ?> 
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Cantidad</label>
+                                <input type="number" class="form-control" placeholder="Cantidad" name="cantidad">
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                 <div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker" name="datepicker">
+                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
+                                    </div><!-- input-group -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <div class="input-group">
+                                    <input id="timepicker" name="timepicker" type="text" class="form-control">
+                                    <span class="input-group-addon"><i class="mdi mdi-clock"></i></span>
+                                </div><!-- input-group -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" name="cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <?php
+                        if(isset($_POST['guardar'])){
+                            conectar();
+                            require ("registrar/registrarVenta.php");
+                            desconectar();
+                        }
+                    ?>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Agregar venta-->
+        <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Ver venta</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Producto</label>
+                                <input type="text" hidden="" id="idVenta" name="">
+                                <input type="text" class="form-control" placeholder="Cantidad" id="producto" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Cantidad</label>
+                                <input type="number" class="form-control" placeholder="Cantidad" id="cantidad" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                 <input type="text" class="form-control" placeholder="Cantidad" id="fecha" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <input type="text" class="form-control" placeholder="Cantidad" id="hora" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Total</label>
+                                <input type="text" class="form-control" placeholder="Cantidad" id="total" disabled>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" name="cancelar">Cerrar</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -330,22 +338,47 @@ desconectar();
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!--Morris Chart-->
-		<script src="assets/plugins/morris/morris.min.js"></script>
-		<script src="assets/plugins/raphael/raphael-min.js"></script>
-
-        <!-- Dashboard init -->
-		<script src="assets/pages/jquery.dashboard.js"></script>
-
         <!-- App Js -->
         <script src="assets/js/jquery.app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
-        <?php
-		  if(isset($_POST['submit'])){
-            conectar();
-			require("registrar.php");
-            desconectar();
-		  }	
-	    ?>
+
+        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/switchery/switchery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+
+        <script src="assets/plugins/moment/moment.js"></script>
+     	<script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+     	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+     	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+     	<script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+     	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/plugins/summernote/summernote.min.js"></script>
+
+        <!-- form advanced init js -->
+        <script src="assets/pages/jquery.form-advanced.init.js"></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.form-validation').parsley();
+                $('.summernote').summernote({
+                    height: 350,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false                 // set focus to editable area after initializing summernote
+                });
+            });
+        </script>
     </body>
 </html>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#actualiza').click(function(){
+			actualizaCliente();
+		});
+	});
+</script>

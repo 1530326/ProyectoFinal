@@ -4,7 +4,7 @@ $user;
     
 function conectar(){
     global $conexion;
-    $conexion = mysqli_connect("localhost","root","","tienda");
+    $conexion = mysqli_connect("localhost","root","Judith_2806","tienda");
 
     mysqli_set_charset($conexion, 'utf8');
 }
@@ -45,6 +45,48 @@ function getUsuario(){
 function getEmpleado(){
     global $conexion;
     $respuesta = mysqli_query($conexion,"SELECT * FROM empleados");
+    return $respuesta->fetch_all();
+}
+
+function getCliente(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM clientes");
+    return $respuesta->fetch_all();
+}
+
+function getProveedor(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM proveedores");
+    return $respuesta->fetch_all();
+}
+
+function getProducto(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM productos");
+    return $respuesta->fetch_all();
+}
+
+function getCategoria(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT DISTINCT categoria FROM productos");
+    return $respuesta->fetch_all();
+}
+
+function getVenta(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM ventas");
+    return $respuesta->fetch_all();
+}
+
+function getCompra(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM compras");
+    return $respuesta->fetch_all();
+}
+
+function getPrestamo(){
+    global $conexion;
+    $respuesta = mysqli_query($conexion,"SELECT * FROM prestamos");
     return $respuesta->fetch_all();
 }
 ?>

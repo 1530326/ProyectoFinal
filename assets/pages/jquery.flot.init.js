@@ -529,7 +529,7 @@
 		//plot graph data
 		var uploads = [[0, 5], [1, 8], [2, 10], [3, 12], [4, 9], [5, 5], [6, 7],[7, 9], [8, 8], [9, 16], [10, 14], [11, 12], [12, 10]];
 		var downloads = [[0, 2], [1, 4], [2, 7], [3, 9], [4, 6], [5, 3], [6, 10],[7, 8], [8, 5], [9, 14], [10, 10], [11, 10], [12, 8]];
-		var plabels = ["Google", "Yahoo"];
+		var plabels = ["Sucursal1", "Sucursal2"];
 		var pcolors = ['#458bc4','#3db9dc'];
 		var borderColor = '#f5f5f5';
 		var bgColor = '#fff';
@@ -665,11 +665,11 @@
 		var line_data = [
 			{
 				data: sin,
-				label: "Google",
+				label: "Sucursal1",
 			},
 			{
 				data: cos,
-				label: "Yahoo"
+				label: "Sucursal2"
 			}
 		];
 		this.createLineGraph("#line-chart-alt", line_ticks, ["#3db9dc", "#d57171"], line_data);

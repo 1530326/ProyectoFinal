@@ -6,7 +6,7 @@ if(!sesionIniciada()){
 
 conectar();
 $usuario = getUsuario();
-
+$cliente = getCliente();
 desconectar();
 ?>
 
@@ -43,8 +43,10 @@ desconectar();
         <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css" >
 	    <link rel="stylesheet" type="text/css" href="alertify/css/themes/default.css" >
         
+        <script src="assets/js/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/gestionar.js"></script>
         <script src="alertify/alertify.min.js"></script>
-
+        <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     </head>
 
 
@@ -79,9 +81,9 @@ desconectar();
 
                             <!-- Top nav left menu -->
                             <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
+                                <li><a href="ayuda.php">Ayuda</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
                             </ul>
 
                             <!-- Top nav Right menu -->
@@ -92,117 +94,11 @@ desconectar();
                                          <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
-                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                        <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                                <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
-                                        </li>
-                                        <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
-                                        <!--</li>-->
-                                    </ul>
-                                </li>
 
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -227,7 +123,7 @@ desconectar();
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="img/user.png" alt="" class="thumb-md img-circle">
+                                    <img src="<?php echo $usuario[4]?>" alt="" class="thumb-md img-circle">
                                 </div>
                                 <div class="user-info">
                                     <a><?php echo $usuario[1]?></a>
@@ -255,7 +151,7 @@ desconectar();
                 </aside>
                 <!--left navigation end-->
 
-                                <!-- START PAGE CONTENT -->
+                <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
                     <div class="container">
                         <div class="row">
@@ -265,7 +161,7 @@ desconectar();
                                         <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Clientes</h2>
                                     </div>
                                     <div align="right">
-                                        <button type="button" class="btn btn-custom btn-rounded">Agregar nuevo</button>
+                                        <a class= "btn btn-custom btn-rounded" type="button" data-toggle="modal" data-target="#agregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar nuevo</a>
                                     </div>
                                     <br>
                                     <div class="col-md-16">
@@ -276,23 +172,34 @@ desconectar();
                                                         <tr>
                                                             <th>ID</th>
                                                             <th>Nombre</th>
-                                                            <th>Apellido Paterno</th>
-                                                            <th>Apellido Materno</th>
+                                                            <th>Dirección</th>
                                                             <th>Teléfono</th>
+                                                            <th>Correo electrónico</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
+                                                    <?php foreach($cliente as $cli):
+									                       $datos= $cli[0]."||".
+										                   $cli[1]."||".
+									                       $cli[2]."||".
+										                   $cli[3]."||".
+										                   $cli[4]."||".
+									                       $cli[5]."||".
+										                   $cli[6]."||".
+										                   $cli[7];
+								                    ?>
                                                     <tbody>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Angela</td>
-                                                        <td>Carrizales</td>
-                                                        <td>Perez</td>
-                                                        <td>8341234567</td>
-                                                        <td><a class="btn btn-primary" type="button" data-toggle="modal" data-target="#modificar" onclick="">
-									                   <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Modificar</a> 
-									                   <a class="btn btn-danger" onclick=""><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar</a></td>
+                                                        <td><?php echo $cli[0]?></td>
+                                                        <td><?php echo $cli[1]?></td>
+                                                        <td><?php echo $cli[2], ' ', $cli[3], ' ', $cli[4], ' ', $cli[5]?></td>
+                                                        <td><?php echo $cli[6]?></td>
+                                                        <td><?php echo $cli[7]?></td>
+                        <td><a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#modificar" onclick="agregaCliente('<?php echo $datos ?>')">
+				        <span class="fa fa-wrench" aria-hidden="true"></span></a> 
+				        <a class="btn btn-icon btn-danger" onclick="preguntarSiNoCliente('<?php echo $cli[0] ?>')"><span class="fa fa-remove" aria-hidden="true"></span></a></td>
                                                     </tr>
+                                                    <?php endforeach ?> 
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -306,9 +213,6 @@ desconectar();
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>
@@ -321,6 +225,109 @@ desconectar();
             <!-- end .page-contentbar -->
         </div>
         <!-- End #page-wrapper -->
+        
+        <!-- Agregar cliente-->
+        <div class="modal fade" id="agregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Agregar cliente</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label>Calle</label>
+                                <input type="text" class="form-control" placeholder="Calle" name="calle">
+                            </div>
+                            <div class="form-group">
+                                <label>Colonia</label>
+                                <input type="text" class="form-control" placeholder="Colonia" name="colonia">
+                            </div>
+                            <div class="form-group">
+                                <label>Código postal</label>
+                                <input type="text" class="form-control" placeholder="Cod. Postal" name="codPostal">
+                            </div>
+						    <div class="form-group">
+                                <label>Número</label>
+                                <input type="text" class="form-control" placeholder="Número" name="numero">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefono</label>
+                                <input type="text" class="form-control" placeholder="Teléfono" name="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="text" class="form-control" placeholder="Correo electrónico" name="correo">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" name="cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <?php
+                        if(isset($_POST['guardar'])){
+                            conectar();
+                            require ("registrar/registrarCliente.php");
+                            desconectar();
+                        }
+                    ?>
+            </div>
+        </div>
+    </div>
+        
+    <!-- modificar cliente-->
+    <div class="modal fade" id="modificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Modificar cliente</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" hidden="" id="idCliente" name="">
+                                <input type="text" class="form-control" placeholder="Nombre" id="nombreU">
+                            </div>
+                            <div class="form-group">
+                                <label>Calle</label>
+                                <input type="text" class="form-control" placeholder="Calle" id="calleU">
+                            </div>
+                            <div class="form-group">
+                                <label>Colonia</label>
+                                <input type="text" class="form-control" placeholder="Colonia" id="coloniaU">
+                            </div>
+                            <div class="form-group">
+                                <label>Código postal</label>
+                                <input type="text" class="form-control" placeholder="Cod. Postal" id="codPostalU">
+                            </div>
+						    <div class="form-group">
+                                <label>Número</label>
+                                <input type="text" class="form-control" placeholder="Número" id="numeroU">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefono</label>
+                                <input type="text" class="form-control" placeholder="Teléfono" id="telefonoU">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="text" class="form-control" placeholder="Correo electrónico" id="correoU">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" name="cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" id="actualiza">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -330,22 +337,16 @@ desconectar();
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!--Morris Chart-->
-		<script src="assets/plugins/morris/morris.min.js"></script>
-		<script src="assets/plugins/raphael/raphael-min.js"></script>
-
-        <!-- Dashboard init -->
-		<script src="assets/pages/jquery.dashboard.js"></script>
-
         <!-- App Js -->
         <script src="assets/js/jquery.app.js"></script>
-        
-        <?php
-		  if(isset($_POST['submit'])){
-            conectar();
-			require("registrar.php");
-            desconectar();
-		  }	
-	    ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </body>
 </html>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#actualiza').click(function(){
+			actualizaCliente();
+		});
+	});
+</script>

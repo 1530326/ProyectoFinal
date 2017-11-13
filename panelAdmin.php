@@ -22,9 +22,6 @@ desconectar();
 
         <link rel="shortcut icon" href="img/favicon.png">
 
-        <!--Morris Chart CSS -->
-		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
-
         <!-- Bootstrap core CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <!-- MetisMenu CSS -->
@@ -33,6 +30,14 @@ desconectar();
         <link href="assets/css/icons.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="assets/css/style.css" rel="stylesheet">
+        
+        <!--Morris Chart CSS -->
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+        
+        <!--calendar css-->
+        <link href="assets/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+        
+        <link href="assets/plugins/summernote/summernote.css" rel="stylesheet" />
 
     </head>
 
@@ -68,9 +73,9 @@ desconectar();
 
                             <!-- Top nav left menu -->
                             <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
+                                <li><a href="ayuda.php">Ayuda</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
                             </ul>
 
                             <!-- Top nav Right menu -->
@@ -81,117 +86,11 @@ desconectar();
                                          <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
-                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                        <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                                <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
-                                        </li>
-                                        <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
-                                        <!--</li>-->
-                                    </ul>
-                                </li>
 
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -216,7 +115,7 @@ desconectar();
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="img/user.png" alt="" class="thumb-md img-circle">
+                                    <img src="<?php echo $usuario[4]?>" alt="" class="thumb-md img-circle">
                                 </div>
                                 <div class="user-info">
                                     <a><?php echo $usuario[1]?></a>
@@ -249,24 +148,55 @@ desconectar();
 							<div class="col-sm-12">
 								<div class="card-box widget-inline">
 									<div class="row">
-										<div class="col-lg-4 col-sm-6">
+										<div class="col-lg-3 col-sm-6">
 											<div class="widget-inline-box text-center">
-												<h3 class="m-t-10"><i class="text-primary fa fa-users"></i> <b data-plugin="counterup">10</b></h3>
+                                                <?php
+                                                    conectar();
+                                                    $sql = "SELECT * FROM empleados";
+	                                                $result = mysqli_query($conexion,$sql);
+	                                                $numero = mysqli_num_rows($result); 
+                                                ?>
+												<h3 class="m-t-10"><i class="text-primary fa fa-users"></i> <b data-plugin="counterup"><?php echo $numero ?></b></h3>
 												<p class="text-muted">Empleados</p>
 											</div>
 										</div>
 
-										<div class="col-lg-4 col-sm-6">
+										<div class="col-lg-3 col-sm-6">
 											<div class="widget-inline-box text-center">
-												<h3 class="m-t-10"><i class="text-custom fa fa-users"></i> <b data-plugin="counterup">20</b></h3>
+                                                <?php
+                                                    conectar();
+                                                    $sql = "SELECT * FROM clientes";
+	                                                $result = mysqli_query($conexion,$sql);
+	                                                $numero = mysqli_num_rows($result); 
+                                                ?>
+												<h3 class="m-t-10"><i class="text-custom fa fa-users"></i> <b data-plugin="counterup"><?php echo $numero ?></b></h3>
 												<p class="text-muted">Clientes</p>
 											</div>
 										</div>
 
-										<div class="col-lg-4 col-sm-6">
+										<div class="col-lg-3 col-sm-6">
 											<div class="widget-inline-box text-center">
-												<h3 class="m-t-10"><i class="text-info fa fa-users"></i> <b data-plugin="counterup">15</b></h3>
+                                                <?php
+                                                    conectar();
+                                                    $sql = "SELECT * FROM proveedores";
+	                                                $result = mysqli_query($conexion,$sql);
+	                                                $numero = mysqli_num_rows($result); 
+                                                ?>
+												<h3 class="m-t-10"><i class="text-info fa fa-users"></i> <b data-plugin="counterup"><?php echo $numero ?></b></h3>
 												<p class="text-muted">Proveedores</p>
+											</div>
+										</div>
+                                        
+                                        <div class="col-lg-3 col-sm-6">
+											<div class="widget-inline-box text-center">
+                                                <?php
+                                                    conectar();
+                                                    $sql = "SELECT * FROM productos";
+	                                                $result = mysqli_query($conexion,$sql);
+	                                                $numero = mysqli_num_rows($result); 
+                                                ?>
+												<h3 class="m-t-10"><i class="text-primary fa fa-users"></i> <b data-plugin="counterup"><?php echo $numero ?></b></h3>
+												<p class="text-muted">Productos</p>
 											</div>
 										</div>
 									</div>
@@ -274,10 +204,8 @@ desconectar();
 							</div>
 						</div>
                         <!--end row -->
-
-
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-6">
                                 <div class="card-box">
                                     <h4 class="m-t-0">Compra-Venta</h4>
                                     <div class="text-center">
@@ -293,77 +221,103 @@ desconectar();
                                     <div id="dashboard-line-chart" style="height: 300px;"></div>
                                 </div>
                             </div> <!-- end col -->
+                            
+                             <div class="col-lg-6">
+                                <div class="card-box">
+                                    <h4 class="m-t-0">Pérdidas</h4>
+                                    <div id="website-stats" style="height: 320px;" class="flot-chart"></div>
+                                </div>
+                            </div> <!-- end col -->
+                            
                         </div> <!-- end row -->
+                        
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <div class="p-20 m-b-20">
+                                    <input data-plugin="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#188ae2" data-displayInput=false value="35"/>
+                                    <h6 class="text-muted m-t-10">Empleados</h6>
+                                </div>
+                            </div><!-- end col-->
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <div class="p-20 m-b-20">
+                                    <input data-plugin="knob" data-width="150" data-height="150" data-cursor=true
+                                           data-fgColor="#4bd396" value="29"/>
+                                    <h6 class="text-muted m-t-10">Clientes</h6>
+                                </div>
+                            </div><!-- end col-->
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <div class="p-20 m-b-20">
+                                    <input data-plugin="knob" data-width="150" data-height="150" data-min="-100"
+                                           data-fgColor="#3ac9d6" data-displayPrevious=true value="44"/>
+                                    <h6 class="text-muted m-t-10">Proveedores</h6>
+                                </div>
+                            </div><!-- end col-->
+                            <div class="col-md-3 col-sm-6 text-center">
+                                <div class="p-20 m-b-20">
+                                    <input data-plugin="knob" data-width="150" data-height="150" data-min="-100"
+                                           data-fgColor="#f9c851" data-displayPrevious=true data-angleOffset=-125
+                                           data-angleArc=250 value="44"/>
+                                    <h6 class="text-muted m-t-10">Productos</h6>
+                                </div>
+                            </div><!-- end col-->
+                        </div>
 
 
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box">
-                                    <h4 class="m-t-0">Proveedores</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover mails m-0 table table-actions-bar">
-                                            <thead>
-                                                <tr>
-                                                    <th style="min-width: 95px;">
-                                                        <div class="checkbox checkbox-primary checkbox-single m-r-15">
-                                                            <input id="action-checkbox" type="checkbox">
-                                                            <label for="action-checkbox"></label>
-                                                        </div>
-                                                        <!--<div class="btn-group dropdown">-->
-                                                            <!--<button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>-->
-                                                            <!--<ul class="dropdown-menu" role="menu">-->
-                                                                <!--<li><a href="#">Action</a></li>-->
-                                                                <!--<li><a href="#">Another action</a></li>-->
-                                                                <!--<li><a href="#">Something else here</a></li>-->
-                                                                <!--<li class="divider"></li>-->
-                                                                <!--<li><a href="#">Separated link</a></li>-->
-                                                            <!--</ul>-->
-                                                        <!--</div>-->
-                                                    </th>
-                                                    <th>Nombre</th>
-                                                    <th>Email</th>
-                                                    <th>Dirección</th>
-                                                    <th>Teléfono</th>
-                                                </tr>
-                                            </thead>
+                            <h4>Préstamos</h4>
+                            <div class="col-md-8">
+                                <div id="calendar"></div>
+                            </div> <!-- end col -->
+                            <div class="col-sm-4">
+                                <div class="timeline timeline-left">
+                                    <article class="timeline-item alt">
+                                        <div class="text-left">
+                                            <div class="time-show first">
+                                                <a href="#" class="btn btn-custom">Este mes</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="timeline-item">
+                                        <div class="timeline-desk">
+                                            <div class="panel">
+                                                <div class="timeline-box">
+                                                    <span class="arrow"></span>
+                                                    <span class="timeline-icon"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                    <h4 class="">13-Noviembre</h4>
+                                                    <p class="timeline-date text-muted"><small>06:25 pm</small></p>
+                                                    <p>El préstamo con ID 1 se ha efectuado al cliente con el ID 2, dando un total de días para pagar de 10.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="timeline-item ">
+                                        <div class="timeline-desk">
+                                            <div class="panel">
+                                                <div class="timeline-box">
+                                                    <span class="arrow"></span>
+                                                    <span class="timeline-icon bg-success"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                    <h4 class="text-success">16-Noviembre</h4>
+                                                    <p class="timeline-date text-muted"><small>08:25 am</small></p>
+                                                    <p>El préstamo con ID 2 se ha efectuado al cliente con el ID 4, dando un total de días para pagar de 8.</p>
 
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-
-                                                    </td>
-
-                                                    <td>
-                                                        
-                                                    </td>
-
-                                                    <td>
-                                                        
-                                                    </td>
-
-                                                    <td>
-                                                        
-                                                    </td>
-
-                                                    <td>
-                                                        
-                                                    </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="">
+                            <h4 class="m-b-10 m-t-0 header-title">Notas</h4>
+				                <div class="summernote">
+								</div>
                         </div>
 
 
                     </div>
                     <!-- end container -->
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>
@@ -391,9 +345,79 @@ desconectar();
 
         <!-- Dashboard init -->
 		<script src="assets/pages/jquery.dashboard.js"></script>
+        
+        <!-- BEGIN PAGE SCRIPTS -->
+        <script src="assets/plugins/moment/moment.js"></script>
+        <script src='assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
+        <script src="assets/pages/jquery.fullcalendar.js"></script>
 
         <!-- App Js -->
         <script src="assets/js/jquery.app.js"></script>
+        
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <!--Morris Chart-->
+		<script src="assets/plugins/morris/morris.min.js"></script>
+		<script src="assets/plugins/raphael/raphael-min.js"></script>
+		<script src="assets/pages/jquery.morris.init.js"></script>
+        
+                <!-- Flot chart -->
+        <script src="assets/plugins/flot-chart/jquery.flot.min.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.time.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.orderBars.min.js"></script>
+        <script src="assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+        <script src="assets/pages/jquery.flot.init.js"></script>
+
+        <!-- KNOB JS -->
+        <!--[if IE]>
+        <script type="text/javascript" src="assets/plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <!-- App Js -->
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script type="text/javascript">
+            $('[data-plugin="knob"]').each(function(idx, obj) {
+                $(this).knob();
+             });
+        </script>
+        
+        
+        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/switchery/switchery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+
+        <!-- App Js -->
+        <script src="assets/js/jquery.app.js"></script>
+        
+        <script src="assets/plugins/summernote/summernote.min.js"></script>
+
+        <!-- form advanced init js -->
+        <script src="assets/pages/jquery.form-advanced.init.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.form-validation').parsley();
+                $('.summernote').summernote({
+                    height: 350,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false                 // set focus to editable area after initializing summernote
+                });
+            });
+        </script>
 
     </body>
 </html>

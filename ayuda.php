@@ -6,8 +6,7 @@ if(!sesionIniciada()){
 
 conectar();
 $usuario = getUsuario();
-$prestamo = getPrestamo();
-$cliente = getCliente();
+$venta = getVenta();
 $producto = getProducto();
 desconectar();
 ?>
@@ -161,66 +160,122 @@ desconectar();
 
                 <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
+
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-16">
-                                <div class="p-20 m-b-20">
-                                    <div class="encabezados">
-                                        <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Préstamos</h2>
-                                    </div>
-                                    <div align="right">
-                                        <a class= "btn btn-custom btn-rounded" type="button" data-toggle="modal" data-target="#agregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar nuevo</a>
-                                    </div>
-                                    <br>
-                                    <div class="col-md-16">
-                                        <div class="panel panel-default">
-                                            <div class="table-responsive">
-                                                <table id="datatable-keytable" class="table table-striped table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>Cliente</th>
-                                                            <th>Producto</th>
-                                                            <th>Cantidad</th>
-                                                            <th>Fecha Inicio</th>
-                                                            <th>Dias para pagar</th>
-                                                            <th>Total</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <?php foreach($prestamo as $pres):
-									                       $datos= $pres[0]."||".
-										                   $pres[1]."||".
-									                       $pres[2]."||".
-										                   $pres[3]."||".
-										                   $pres[4]."||".
-                                                           $pres[5]."||".
-									                       $pres[6];
-								                    ?>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><?php echo $pres[0]?></td>
-                                                        <td><?php echo $pres[1]?></td>
-                                                        <td><?php echo $pres[2]?></td>
-                                                        <td><?php echo $pres[3]?></td>
-                                                        <td><?php echo $pres[4]?></td>
-                                                        <td><?php echo $pres[5]?></td>
-                                                        <td><?php echo $pres[6]?></td>
-                        <td>
-                        <a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#ver" onclick="agregaPrestamo('<?php echo $datos ?>')">
-				        <span class="fa fa-search" aria-hidden="true"></span></a> 
-                        </td>
-                                                    </tr>
-                                                    <?php endforeach ?> 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-sm-12">
+                                <h4 class="header-title m-t-0">Ayuda</h4>
                             </div>
+                        </div> <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="p-20">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="text-center">
+                                                <h3 class="font-600">Preguntas frecuentes</h3>
+                                                <p class="text-muted"> Aquí podrás encontrar las preguntas frecuentes que se realizan dentro de nuestro panel de Administración, si tienes preguntas que su respuesta no está aquí no dudes en contactarnos</p>
+
+                                                <a href="contacto.php"><button type="button" class="btn btn-success m-t-12">Contactar</button></a>
+
+                                            </div>
+                                        </div><!-- end col -->
+                                    </div><!-- end row -->
+
+
+                                    <div class="row m-t-30">
+                                        <div class="col-md-5 col-md-offset-1">
+                                            <div class="p-20">
+                                                <!-- Question/Answer -->
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Empleados?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Clientes?</h5>
+                                                    <p class="answer">Lorem ipsum dolor sit amet, in mea nonumes
+                                                        dissentias dissentiunt, pro te solet oratio iriure. Cu sit
+                                                        consetetur moderatius intellegam, ius decore accusamus te. Ne
+                                                        primis suavitate disputando nam. Mutat convenirete.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Proveedores?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Productos?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <!--/col-md-5 -->
+
+                                        <div class="col-md-5">
+
+                                            <div class="p-20">
+                                                <!-- Question/Answer -->
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Ventas?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Compras?</h5>
+                                                    <p class="answer">Lorem ipsum dolor sit amet, in mea nonumes
+                                                        dissentias dissentiunt, pro te solet oratio iriure. Cu sit
+                                                        consetetur moderatius intellegam, ius decore accusamus te. Ne
+                                                        primis suavitate disputando nam. Mutat convenirete.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Préstamos?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+
+                                                <!-- Question/Answer -->
+                                                <div class="m-b-30">
+                                                    <h5 class="question">¿Usuarios?</h5>
+                                                    <p class="answer">Lorem Ipsum is simply dummy text of the printing
+                                                        and typesetting industry. Lorem Ipsum has been the industry's
+                                                        standard dummy text ever since the 1500s.</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--/col-md-5-->
+                                    </div>
+                                    <!-- end row -->
+
+                                </div>
+                            </div><!-- end col -->
                         </div>
                         <!-- end row -->
+
                     </div>
                     <!-- end container -->
 
@@ -232,119 +287,6 @@ desconectar();
 
                 </div>
                 <!-- End #page-right-content -->
-
-            </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
-        
-        <!-- Agregar venta-->
-        <div class="modal fade" id="agregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form method="POST" action="" enctype="multipart/form-data">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Agregar préstamo</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Cliente</label>
-                                <select name="cliente" class="form-control">
-                                    <?php foreach($cliente as $cli):
-								        $d= $cli[1];
-								    ?>
-                                    <option><?php echo $cli[1]?></option>
-                                    <?php endforeach ?> 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Producto</label>
-                                <select name="producto" class="form-control">
-                                    <?php foreach($producto as $pro):
-								        $d= $pro[1];
-								    ?>
-                                    <option><?php echo $pro[1]?></option>
-                                    <?php endforeach ?> 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Cantidad</label>
-                                <input type="number" class="form-control" placeholder="Cantidad" name="cantidad">
-                            </div>
-                            <div class="form-group">
-                                <label>Fecha Inicio</label>
-                                 <div>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker" name="datepicker">
-                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
-                                    </div><!-- input-group -->
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Dias para pagar</label>
-                                <input type="number" class="form-control" placeholder="Dias" name="dias">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" name="cancelar">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    <?php
-                        if(isset($_POST['guardar'])){
-                            conectar();
-                            require ("registrar/registrarPrestamo.php");
-                            desconectar();
-                        }
-                    ?>
-            </div>
-        </div>
-    </div>
-        
-    <!-- Agregar venta-->
-        <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form method="POST" action="" enctype="multipart/form-data">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Ver compra</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Cliente</label>
-                                <input type="text" hidden="" id="idPrestamo" name="">
-                                <input type="text" class="form-control" placeholder="Cantidad" id="cliente" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Producto</label>
-                                <input type="text" hidden="" id="idPrestamo" name="">
-                                <input type="text" class="form-control" placeholder="Cantidad" id="producto" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Cantidad</label>
-                                <input type="number" class="form-control" placeholder="Cantidad" id="cantidad" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Fecha Inicio</label>
-                                 <input type="text" class="form-control" placeholder="Cantidad" id="fechaI" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Dias para pagar</label>
-                                <input type="text" class="form-control" placeholder="Cantidad" id="dias" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Total</label>
-                                <input type="text" class="form-control" placeholder="Cantidad" id="total" disabled>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" name="cancelar">Cerrar</button>
-                            </div>
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
 
 
 

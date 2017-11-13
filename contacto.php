@@ -6,8 +6,7 @@ if(!sesionIniciada()){
 
 conectar();
 $usuario = getUsuario();
-$prestamo = getPrestamo();
-$cliente = getCliente();
+$venta = getVenta();
 $producto = getProducto();
 desconectar();
 ?>
@@ -24,14 +23,8 @@ desconectar();
 
         <link rel="shortcut icon" href="img/favicon.png">
 
-        <!-- DataTables -->
-        <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <!-- jvectormap -->
+        <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 
         <!-- Bootstrap core CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -54,6 +47,7 @@ desconectar();
         <script src="assets/js/jquery-2.1.4.min.js"></script>
         <script src="assets/js/gestionar.js"></script>
         <script src="alertify/alertify.min.js"></script>
+        <link href="assets/plugins/summernote/summernote.css" rel="stylesheet" />
         <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     </head>
 
@@ -106,7 +100,7 @@ desconectar();
                                 <li class="dropdown top-menu-item-xs">
                                     <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -161,66 +155,57 @@ desconectar();
 
                 <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
+
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-16">
-                                <div class="p-20 m-b-20">
-                                    <div class="encabezados">
-                                        <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Préstamos</h2>
-                                    </div>
-                                    <div align="right">
-                                        <a class= "btn btn-custom btn-rounded" type="button" data-toggle="modal" data-target="#agregar"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar nuevo</a>
-                                    </div>
-                                    <br>
-                                    <div class="col-md-16">
-                                        <div class="panel panel-default">
-                                            <div class="table-responsive">
-                                                <table id="datatable-keytable" class="table table-striped table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>Cliente</th>
-                                                            <th>Producto</th>
-                                                            <th>Cantidad</th>
-                                                            <th>Fecha Inicio</th>
-                                                            <th>Dias para pagar</th>
-                                                            <th>Total</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <?php foreach($prestamo as $pres):
-									                       $datos= $pres[0]."||".
-										                   $pres[1]."||".
-									                       $pres[2]."||".
-										                   $pres[3]."||".
-										                   $pres[4]."||".
-                                                           $pres[5]."||".
-									                       $pres[6];
-								                    ?>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><?php echo $pres[0]?></td>
-                                                        <td><?php echo $pres[1]?></td>
-                                                        <td><?php echo $pres[2]?></td>
-                                                        <td><?php echo $pres[3]?></td>
-                                                        <td><?php echo $pres[4]?></td>
-                                                        <td><?php echo $pres[5]?></td>
-                                                        <td><?php echo $pres[6]?></td>
-                        <td>
-                        <a class="btn btn-icon btn-primary" type="button" data-toggle="modal" data-target="#ver" onclick="agregaPrestamo('<?php echo $datos ?>')">
-				        <span class="fa fa-search" aria-hidden="true"></span></a> 
-                        </td>
-                                                    </tr>
-                                                    <?php endforeach ?> 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-sm-12">
+                                <h4 class="header-title m-t-0 m-b-20">Contacto</h4>
                             </div>
-                        </div>
-                        <!-- end row -->
+                        </div> <!-- end row -->
+
+
+                        <div class="row">
+                        	<div class="col-md-4">
+                        		<div class="text-center card-box">
+                                    <div class="clearfix"></div>
+                                    <div class="member-card">
+                                        <span class="user-badge bg-warning">Creadora</span>
+                                        <div class="thumb-xl member-thumb m-b-10 center-block">
+                                            <img src="img/creadora.jpg" class="img-circle img-thumbnail" alt="profile-image">
+                                            <i class="mdi mdi-information-outline member-star text-success" title="verified user"></i>
+                                        </div>
+
+                                        <div class="">
+                                            <h4 class="m-b-5">Angela Carrizales</h4>
+                                            <p class="text-muted">@UPV <span> | </span> <span> <a href="#" class="text-pink">15030326@upv.edu.mx</a> </span></p>
+                                        </div>
+
+                                        <p class="text-muted font-13">
+                                            Hola, soy Angela Carrizales, desarrolladora del panel Administrativo, soy estudiante de la carrera de Ing. de Tecnologías de la Información, cualquier duda contáctame por mi correo.
+                                        </p>
+
+                                        <button class="btn btn-default btn-sm m-t-10" type="button" data-toggle="modal" data-target="#contacto">Enviar mensaje</button>
+                                        <ul class="social-links list-inline m-t-30">
+                                            <li>
+                                                <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                            </li>
+                                            <li>
+                                                <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div> <!-- end col -->
+                            
+                            <div class="col-md-8">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7305.16628049482!2d-99.08270071288993!3d23.726575980722693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x867951bd5407d2a9%3A0x1dfa01b571fe2685!2sUniversidad+Polit%C3%A9cnica+de+Victoria!5e0!3m2!1ses!2smx!4v1510550675831" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div> <!-- end col -->
                     </div>
                     <!-- end container -->
 
@@ -231,6 +216,7 @@ desconectar();
                     </div> <!-- end footer -->
 
                 </div>
+                </div>
                 <!-- End #page-right-content -->
 
             </div>
@@ -238,115 +224,44 @@ desconectar();
         </div>
         <!-- End #page-wrapper -->
         
-        <!-- Agregar venta-->
-        <div class="modal fade" id="agregar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- contacto-->
+        <div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <form method="POST" action="" enctype="multipart/form-data">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Agregar préstamo</h4>
+                        <div class="form-group">
+                            <label>Asunto</label>
+                            <div>
+                                <input type="text" id="example-email" name="example-email" class="form-control" placeholder="Asunto">
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Cliente</label>
-                                <select name="cliente" class="form-control">
-                                    <?php foreach($cliente as $cli):
-								        $d= $cli[1];
-								    ?>
-                                    <option><?php echo $cli[1]?></option>
-                                    <?php endforeach ?> 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Producto</label>
-                                <select name="producto" class="form-control">
-                                    <?php foreach($producto as $pro):
-								        $d= $pro[1];
-								    ?>
-                                    <option><?php echo $pro[1]?></option>
-                                    <?php endforeach ?> 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Cantidad</label>
-                                <input type="number" class="form-control" placeholder="Cantidad" name="cantidad">
-                            </div>
-                            <div class="form-group">
-                                <label>Fecha Inicio</label>
-                                 <div>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker" name="datepicker">
-                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
-                                    </div><!-- input-group -->
+                        <div class="form-group">
+                            <label>Enviar a</label>
+                                <div>
+                                    <input type="text" class="form-control" value="1530326@upv.edu.mx">
                                 </div>
+                        </div>
+                        <div class="form-group">
+                            <label>De</label>
+                            <div>
+                                <input type="text" class="form-control" value="alguien@example.com">
                             </div>
-                            <div class="form-group">
-                                <label>Dias para pagar</label>
-                                <input type="number" class="form-control" placeholder="Dias" name="dias">
+                        </div>
+                        <div class="form-group">
+                            <div class="">
+                            <h4 class="m-b-10 m-t-0 header-title">Mensaje</h4>
+				                <div class="summernote">
+								</div>
                             </div>
-                            <div class="modal-footer">
+                        </div>
+                        <div class="modal-footer">
                                 <button type="submit" class="btn btn-default" name="cancelar">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
-                            </div>
+                                <button type="submit" class="btn btn-primary" name="guardar">Enviar</button>
                         </div>
-                    </form>
-                    
-                    <?php
-                        if(isset($_POST['guardar'])){
-                            conectar();
-                            require ("registrar/registrarPrestamo.php");
-                            desconectar();
-                        }
-                    ?>
+                </form>
             </div>
         </div>
     </div>
-        
-    <!-- Agregar venta-->
-        <div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form method="POST" action="" enctype="multipart/form-data">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Ver compra</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Cliente</label>
-                                <input type="text" hidden="" id="idPrestamo" name="">
-                                <input type="text" class="form-control" placeholder="Cantidad" id="cliente" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Producto</label>
-                                <input type="text" hidden="" id="idPrestamo" name="">
-                                <input type="text" class="form-control" placeholder="Cantidad" id="producto" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Cantidad</label>
-                                <input type="number" class="form-control" placeholder="Cantidad" id="cantidad" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Fecha Inicio</label>
-                                 <input type="text" class="form-control" placeholder="Cantidad" id="fechaI" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Dias para pagar</label>
-                                <input type="text" class="form-control" placeholder="Cantidad" id="dias" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label>Total</label>
-                                <input type="text" class="form-control" placeholder="Cantidad" id="total" disabled>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" name="cancelar">Cerrar</button>
-                            </div>
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
-
-
 
         <!-- js placed at the end of the document so the pages load faster -->
         <script src="assets/js/jquery-2.1.4.min.js"></script>
@@ -376,6 +291,51 @@ desconectar();
         <!-- form advanced init js -->
         <script src="assets/pages/jquery.form-advanced.init.js"></script>
 
+        <!-- google maps api -->
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <!-- Gmaps file -->
+        <script src="assets/plugins/gmaps/gmaps.min.js"></script>
+
+        <!-- Google map Init -->
+        <script src="assets/pages/jquery.gmaps.js"></script>
+
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="assets/plugins/jvectormap/gdp-data.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-uk-mill-en.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-au-mill.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
+            
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <!--Morris Chart-->
+		<script src="assets/plugins/morris/morris.min.js"></script>
+		<script src="assets/plugins/raphael/raphael-min.js"></script>
+        
+        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/switchery/switchery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+
+
+        <!-- Dashboard init -->
+		<script src="assets/pages/jquery.dashboard.js"></script>
+        
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+        <!-- App Js -->
+        <script src="assets/js/jquery.app.js"></script>
+        
+        <script src="assets/plugins/summernote/summernote.min.js"></script>
+
+        <!-- form advanced init js -->
+        <script src="assets/pages/jquery.form-advanced.init.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {

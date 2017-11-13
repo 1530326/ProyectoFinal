@@ -72,9 +72,9 @@ desconectar();
 
                             <!-- Top nav left menu -->
                             <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="perfil.php">Perfil</a></li>
+                                <li><a href="ayuda.php">Ayuda</a></li>
+                                <li><a href="contacto.php">Contacto</a></li>
                             </ul>
 
                             <!-- Top nav Right menu -->
@@ -85,117 +85,11 @@ desconectar();
                                          <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
-                                    </a>
-                                    <ul class="dropdown-menu p-0 dropdown-menu-lg">
-                                        <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                        <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                                <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
-                                        </li>
-                                        <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
-                                        <!--</li>-->
-                                    </ul>
-                                </li>
 
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="img/user.png" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo $usuario[4]?>" alt="" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Perfil</a></li>
+                                        <li><a href="perfil.php"><i class="ti-user m-r-10"></i> Perfil</a></li>
                                         <li><a href="index.html"><i class="ti-power-off m-r-10"></i> Salir</a></li>
                                     </ul>
                                 </li>
@@ -220,7 +114,7 @@ desconectar();
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="img/user.png" alt="" class="thumb-md img-circle">
+                                    <img src="<?php echo $usuario[4]?>" alt="" class="thumb-md img-circle">
                                 </div>
                                 <div class="user-info">
                                     <a><?php echo $usuario[1]?></a>
@@ -289,6 +183,15 @@ desconectar();
                                                     </select>
                                                 </div>
                                             </div>
+                                            
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 form-control-label">Imagen</label>
+                                                <div class="inputGroupContainer col-sm-7">
+                                                <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+                                                <input type="file" name="imagenU" class="form-control" />
+                                                </div>
+                                                </div>
+                                            </div>
                                             <br>
                                             <br>
                                             <div class="form-group row">
@@ -313,9 +216,6 @@ desconectar();
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>
